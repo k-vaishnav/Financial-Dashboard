@@ -1,14 +1,25 @@
+![React](https://img.shields.io/badge/React-Frontend-blue)
+![Vite](https://img.shields.io/badge/Vite-Build-purple)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 # Financial Dashboard
 
-A responsive financial dashboard built with React and Vite.
+🚀 **Live App:**  https://financial-dashboard-rust-omega.vercel.app/
 
-This project helps users:
-- view an overall financial summary
-- explore transactions
-- understand spending patterns
-- switch between `Viewer` and `Admin` roles on the frontend
+## 📌 Overview
+A responsive financial dashboard built with React + Vite that helps users track, analyze, and understand their financial activity through interactive UI and insights.
 
-It is designed as a frontend assignment/demo project, so all data is handled in the browser with mock transactions and local storage.
+## ✨ Key Highlights
+
+- 📊 Real-time financial summary (balance, income, expenses)
+- 🔍 Advanced transaction search, filter, and sort
+- 👤 Role-based UI (Viewer vs Admin)
+- 📈 Insights on spending patterns
+- 🌙 Dark mode support
+- 💾 Local storage persistence
+- 📤 Export data as JSON & CSV
+- 📱 Fully responsive design
+
+This is a frontend-focused project using mock data and local storage to simulate real-world financial interactions.
 
 ## What This Project Includes
 
@@ -199,7 +210,7 @@ Users can export the visible transaction data set into:
 
 ## Final Summary
 
-This project already covers the main evaluation areas well:
+This project already covers the main areas well:
 - design
 - responsiveness
 - functionality
