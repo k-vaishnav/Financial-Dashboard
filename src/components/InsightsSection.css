@@ -1,0 +1,38 @@
+.insight-list {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.insight-card {
+  padding: 1rem;
+  border-radius: 20px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-card::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -18px;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15, 108, 105, 0.1), transparent 70%);
+}
+
+.insight-card span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.insight-card strong {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-size: 1rem;
+}

@@ -1,0 +1,128 @@
+.panel,
+.summary-card,
+.hero-card {
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(20px);
+}
+
+.panel {
+  padding: 1.2rem;
+  border-radius: 26px;
+  background: var(--surface-soft);
+}
+
+.panel-large {
+  min-width: 0;
+}
+
+.panel h2,
+.hero-card h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.panel-heading strong {
+  color: var(--accent-strong);
+  font-size: 1.1rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+}
+
+.empty-state {
+  padding: 1rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(245, 239, 227, 0.32) 0%, rgba(254, 249, 239, 0.14) 100%);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-soft);
+}
+
+.muted-copy {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.82rem 0.9rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface-strong);
+  color: var(--text-primary);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid rgba(31, 138, 112, 0.25);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(31, 138, 112, 0.08);
+}
+
+.primary-button,
+.ghost-button {
+  border-radius: 999px;
+  padding: 0.8rem 1.15rem;
+  cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.primary-button {
+  border: none;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: #fff9f2;
+}
+
+.ghost-button {
+  border: 1px solid var(--border-soft);
+  background: var(--surface-strong);
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .empty-state {
+  background: linear-gradient(135deg, rgba(250, 253, 252, 0.95) 0%, rgba(235, 243, 241, 0.96) 100%);
+}
+
+[data-theme='dark'] .ghost-button {
+  background: rgba(248, 252, 251, 0.94);
+}
+
+.primary-button:hover,
+.ghost-button:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  .panel,
+  .summary-card,
+  .hero-card {
+    border-radius: 22px;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+}

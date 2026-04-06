@@ -1,0 +1,120 @@
+.navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem max(1rem, calc((100vw - 1380px) / 2 + 1rem));
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid var(--border-soft);
+  border-radius: 0;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(8, 22, 30, 0.94);
+  border-bottom-color: rgba(183, 205, 210, 0.18);
+}
+
+[data-theme='dark'] .navbar-label,
+[data-theme='dark'] .navbar-links a {
+  color: #a9beb9;
+}
+
+[data-theme='dark'] .navbar-brand strong,
+[data-theme='dark'] .navbar-links a:hover {
+  color: #edf4f2;
+}
+
+[data-theme='dark'] .navbar .ghost-button {
+  background: rgba(245, 250, 249, 0.12);
+  color: #edf4f2;
+  border-color: rgba(183, 205, 210, 0.2);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.navbar-logo {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: #fff;
+  font-weight: 700;
+}
+
+.navbar-label {
+  margin: 0;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+
+.navbar-brand strong {
+  color: var(--text-primary);
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.navbar-links a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.navbar-links a:hover {
+  color: var(--text-primary);
+}
+
+.navbar-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.theme-toggle {
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: #fff;
+}
+
+@media (max-width: 1280px) {
+  .navbar {
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-links,
+  .navbar-actions {
+    justify-content: flex-start;
+  }
+}

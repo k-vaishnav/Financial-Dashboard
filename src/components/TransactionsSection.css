@@ -1,0 +1,244 @@
+.filter-bar {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.filter-bar label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.filter-bar span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.transaction-table {
+  border: 1px solid var(--border-soft);
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--surface-strong);
+}
+
+.transaction-head,
+.transaction-row {
+  display: grid;
+  grid-template-columns: 1.05fr 1.55fr 0.9fr 1fr 0.9fr;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.95rem 1rem;
+}
+
+.transaction-head {
+  background: rgba(127, 115, 95, 0.12);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.transaction-row + .transaction-row {
+  border-top: 1px solid var(--border-soft);
+}
+
+.transaction-row {
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.transaction-row:hover {
+  background: rgba(127, 115, 95, 0.08);
+}
+
+.transaction-row strong {
+  color: var(--text-primary);
+}
+
+.transaction-field {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.transaction-label {
+  display: none;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.transaction-subline {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.transaction-main strong,
+.transaction-main .transaction-subline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.transaction-amount-block {
+  justify-items: start;
+}
+
+.transaction-action {
+  justify-items: start;
+}
+
+.type-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  text-transform: capitalize;
+}
+
+.type-pill.income {
+  background: rgba(31, 138, 112, 0.12);
+  color: #16614f;
+}
+
+.type-pill.expense {
+  background: rgba(208, 93, 50, 0.12);
+  color: #9c3f1c;
+}
+
+.amount-positive {
+  color: #16614f;
+  font-weight: 700;
+}
+
+.amount-negative {
+  color: #a54620;
+  font-weight: 700;
+}
+
+[data-theme='dark'] .transaction-head {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='dark'] .transaction-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .type-pill.income {
+  background: rgba(56, 201, 165, 0.16);
+  color: #8cead0;
+}
+
+[data-theme='dark'] .type-pill.expense {
+  background: rgba(239, 140, 47, 0.18);
+  color: #ffbf85;
+}
+
+[data-theme='dark'] .amount-positive {
+  color: #78e4c4;
+}
+
+[data-theme='dark'] .amount-negative {
+  color: #ffb07d;
+}
+
+@media (max-width: 1024px) {
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .transaction-head {
+    display: none;
+  }
+
+  .transaction-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    padding: 0.95rem;
+    border-radius: 18px;
+    margin: 0.7rem;
+    border: 1px solid var(--border-soft);
+    background: var(--surface-soft);
+    align-items: start;
+  }
+
+  .transaction-row + .transaction-row {
+    border-top: 1px solid var(--border-soft);
+  }
+
+  .transaction-label {
+    display: none;
+  }
+
+  .transaction-table {
+    background: transparent;
+    border: none;
+  }
+
+  .transaction-main {
+    grid-column: 1 / -1;
+  }
+
+  .transaction-date,
+  .transaction-amount-block,
+  .transaction-action,
+  .transaction-field:not(.transaction-main) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .transaction-main strong {
+    white-space: normal;
+    line-height: 1.3;
+    font-size: 0.98rem;
+  }
+
+  .transaction-subline,
+  .transaction-date span:last-child,
+  .transaction-action .muted-copy,
+  .transaction-action .ghost-button,
+  .transaction-amount-block .amount-positive,
+  .transaction-amount-block .amount-negative {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .transaction-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    margin: 0.55rem;
+    padding: 0.85rem;
+  }
+
+  .transaction-table {
+    border-radius: 18px;
+  }
+
+  .transaction-main {
+    grid-column: 1 / -1;
+  }
+
+  .transaction-action {
+    grid-column: 1 / -1;
+  }
+
+  .type-pill {
+    font-size: 0.72rem;
+  }
+
+  .transaction-subline,
+  .transaction-date span:last-child,
+  .transaction-action .muted-copy,
+  .transaction-action .ghost-button,
+  .transaction-amount-block .amount-positive,
+  .transaction-amount-block .amount-negative {
+    font-size: 0.82rem;
+  }
+}

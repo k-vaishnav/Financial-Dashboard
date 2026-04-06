@@ -1,0 +1,74 @@
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.summary-card {
+  padding: 1.15rem 1.2rem;
+  border-radius: 24px;
+  background: var(--surface-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-card::after {
+  content: '';
+  position: absolute;
+  inset: auto -20% -50% auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 138, 112, 0.14), transparent 68%);
+  pointer-events: none;
+}
+
+.summary-card:nth-child(2)::after {
+  background: radial-gradient(circle, rgba(239, 140, 47, 0.16), transparent 68%);
+}
+
+.summary-card:nth-child(3)::after {
+  background: radial-gradient(circle, rgba(15, 108, 105, 0.12), transparent 68%);
+}
+
+[data-theme='dark'] .summary-card::after {
+  background: radial-gradient(circle, rgba(56, 201, 165, 0.2), transparent 68%);
+}
+
+[data-theme='dark'] .summary-card:nth-child(2)::after {
+  background: radial-gradient(circle, rgba(239, 140, 47, 0.24), transparent 68%);
+}
+
+[data-theme='dark'] .summary-card:nth-child(3)::after {
+  background: radial-gradient(circle, rgba(47, 139, 165, 0.2), transparent 68%);
+}
+
+.summary-card span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.summary-card strong {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.summary-card small {
+  display: block;
+  margin-top: 0.65rem;
+  color: var(--text-secondary);
+  max-width: 28ch;
+}
+
+@media (max-width: 1024px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
